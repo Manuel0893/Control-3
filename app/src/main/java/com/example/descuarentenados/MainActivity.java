@@ -11,7 +11,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText usuario, password;
-    Usuario Nusuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +24,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Login(View view){
+        String usr = "";
+        String pwd = "";
+         usr = usuario.getText().toString();
+         pwd = password.getText().toString();
 
-        if (usuario.getText().equals(Nusuario.getUser()) && password.getText().equals(Nusuario.getPassword())) {
             Intent intento = new Intent(getApplicationContext(), ActivityFormulario.class);
 
-            intento.putExtra("usuario", usuario.getText().toString());
-            intento.putExtra("contraseña", password.getText().toString());
             startActivity(intento);
-        }else{
-            Toast.makeText(getApplicationContext(),"No existe el usuario ingresado",Toast.LENGTH_SHORT).show();
-        }
+
+
     }
     public void registrAct(View view){
         Intent inte = new Intent(getApplicationContext(), ActivityRegistro.class);

@@ -30,7 +30,7 @@ public class ActivityRegistro extends AppCompatActivity {
 
     }
     public void guardaUsuario(View vi){
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+
         Usuario li = new Usuario(nombre.getText().toString(), apellido.getText().toString(), genero.getText().toString(),Nusuario.getText().toString(),Ncontra.getText().toString());
         listaU.userList.add(li);
         nombre.setText("");
@@ -39,11 +39,9 @@ public class ActivityRegistro extends AppCompatActivity {
         Nusuario.setText("");
         Ncontra.setText("");
 
-        intent.putExtra("usuario", (Serializable) listaU);
-        startActivity(intent);
 
         for (Usuario u : listaU.userList){
-            Toast.makeText(getApplicationContext(),"Usuario: "+u.getUser()+" Contraseña: "+u.getPassword()+"REGISTRO EXITOSO!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Usuario: "+u.getUser()+" Contraseña: "+u.getPassword()+" REGISTRO EXITOSO!",Toast.LENGTH_SHORT).show();
         }
     }
 
